@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strncmp(const char *str, const char *cmp, int n){
+#include <stdlib.h>
+
+int ft_strncmp(const char *str, const char *cmp, size_t n){
 	int iter;
 
 	iter = 0;
