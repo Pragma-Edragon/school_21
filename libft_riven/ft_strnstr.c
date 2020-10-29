@@ -31,18 +31,26 @@ int cmp_blocks(const char *str, const char *cmp, int block){
 	return iter == block ? 1 : 0;
 }
 
-
 char *ft_strnstr(const char *arg, const char *cmp, int len){
 	int iter;
 	int block;
+	int key;
 
 	iter = 0;
+	key = 0;
 	block = ft_getlen(cmp);
+	if (block == 1)
+        return ((char *)arg);
 	while (iter < len){
 		if (cmp_blocks(arg, cmp, block))
-			break ;
+        {
+		    key = 1;
+            break ;
+        }
 		iter++;
 		arg += 1;
 	}
-	return (arg);
+	if (!(key))
+        return (void*)0;
+	return ((char*)arg);
 }
