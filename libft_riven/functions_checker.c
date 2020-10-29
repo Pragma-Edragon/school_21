@@ -8,6 +8,7 @@
 #include "ft_atoi.c"
 #include "ft_strncmp.c"
 #include "ft_strnstr.c"
+#include "ft_strrchr.c"
 #include <stdio.h>
 
 int main(void) {
@@ -73,5 +74,7 @@ int main(void) {
 	char *cmp_str = "l2l!";
 	printf("%d", ft_strncmp(str_to_cmp, cmp_str, 15));
 	printf("\n");
-	printf("%s", ft_strnstr("wow riven is so good!", "riven", 13));
+	printf("%s", ft_strnstr("wow riven is so good!", "so", 5));
+    printf("\n");
+    printf("Sybmol in the string? %s", ft_strrchr("riven koiki;", 'i'));
 }
