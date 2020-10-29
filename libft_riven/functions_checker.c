@@ -9,6 +9,10 @@
 #include "ft_strncmp.c"
 #include "ft_strnstr.c"
 #include "ft_strrchr.c"
+#include "ft_strchr.c"
+#include "ft_strlcat.c"
+#include "ft_strlcpy.c"
+#include "ft_strlen.c"
 #include <stdio.h>
 
 int main(void) {
@@ -76,5 +80,16 @@ int main(void) {
 	printf("\n");
 	printf("%s", ft_strnstr("wow riven is so good!", "so", 5));
     printf("\n");
-    printf("Sybmol in the string? %s", ft_strrchr("riven koiki;", 'i'));
+    printf("Symbol in the string? %s", ft_strrchr("riven koiki;", 'i'));
+    printf("\n");
+    printf("Symbol from the start of the string: %s\n", ft_strchr("rven koki", '\0'));
+    printf("Symbol from the start of the string: %s\n", ft_strchr("rven koki", 'i'));
+    printf("Symbol from the start of the string: %s\n", ft_strchr("riven kioki", 'i'));
+    printf("\n");
+    printf("\n");
+    const char *src = "WHAT??";
+    char buf[24] = "lsmdl_";
+    printf("%zu", ft_strlcat(buf, src, sizeof(buf)));
+    printf("\n");
+    printf("%zu ft_strlcpy: ", ft_strlcpy(buf, src, sizeof(buf)));
 }
