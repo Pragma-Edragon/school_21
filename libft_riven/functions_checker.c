@@ -16,6 +16,9 @@
 #include "ft_memcmp.c"
 #include "ft_memchr.c"
 #include "ft_memmove.c"
+#include "ft_memccpy.c"
+#include "ft_bzero.c"
+#include "ft_memset.c"
 #include <stdio.h>
 #include <mem.h>
 
