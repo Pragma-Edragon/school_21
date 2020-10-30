@@ -13,7 +13,51 @@
 #include "ft_strlcat.c"
 #include "ft_strlcpy.c"
 #include "ft_strlen.c"
+#include "ft_memcmp.c"
+#include "ft_memchr.c"
+#include "ft_memmove.c"
 #include <stdio.h>
+#include <mem.h>
+
+
+int memcmp_checker(){
+    //initializing character array
+    char str1[ ] = "Learn python from tyrtoprogram.com";
+    char str2[ ] = "Learn C from trytoprogram.com";
+
+    //displaying str1 and str2
+    printf("str1 = %s\n", str1);
+    printf("str2 = %s\n", str2);
+
+    printf("\nmemcmp( str1, str2, 5 ) = %d\n", ft_memcmp( str1, str2, 5 ));
+    printf("\nmemcmp( str1, str2, 15 ) = %d\n", ft_memcmp( str1, str2, 15 ));
+    printf("\nmemcmp( str2, str1, 15 ) = %d\n", ft_memcmp( str2, str1, 15 ));
+
+    return 0;
+}
+
+int memchr_checker(){
+    char * pch;
+    char str[] = "Example string";
+    pch = (char*) ft_memchr (str, 'p', strlen(str));
+    printf("%p %d, %p %d", pch, *pch, str, *str);
+    if (pch!=NULL)
+        printf ("'p' found at position %d.\n", pch-str+1);
+    else
+        printf ("'p' not found.\n");
+    return 0;
+}
+
+int memmove_checker(){
+    char dest[] = "oldstring";
+    const char src[]  = "newstring1";
+
+    printf("Before memmove dest = %s, src = %s\n", dest, src);
+    ft_memmove(dest, src, 9);
+    printf("After memmove dest = %s, src = %s\n", dest, src);
+
+    return(0);
+}
 
 int main(void) {
     int iter = 0;
@@ -92,4 +136,8 @@ int main(void) {
     printf("%zu", ft_strlcat(buf, src, sizeof(buf)));
     printf("\n");
     printf("%zu ft_strlcpy: ", ft_strlcpy(buf, src, sizeof(buf)));
+    printf("\n");
+    memcmp_checker();
+    memchr_checker();
+    memmove_checker();
 }
