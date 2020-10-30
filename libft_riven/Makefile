@@ -15,8 +15,13 @@ SRC =	ft_atoi.c		\
       	ft_strrchr.c	\
       	ft_tolower.c	\
       	ft_toupper.c	\
-      	ft_strlcpy		\
-      	ft_tstrlen		\
+      	ft_strlcpy.c	\
+      	ft_strlen.c		\
+      	ft_memcmp.c		\
+      	ft_memchr.c		\
+      	ft_memmove.c	\
+      	ft_memccpy.c	\
+      	ft_bzero.c		\
 
 OBJS = $(SRCS:.c=.o)
 
