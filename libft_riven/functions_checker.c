@@ -20,6 +20,7 @@
 #include "ft_bzero.c"
 #include "ft_memset.c"
 #include "ft_strdup.c"
+#include "ft_substr.c"
 #include <stdio.h>
 #include <mem.h>
 
