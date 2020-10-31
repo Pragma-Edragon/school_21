@@ -23,6 +23,7 @@
 #include "ft_strdup.c"
 #include "ft_substr.c"
 #include "ft_strjoin.c"
+#include "ft_strtrim.c"
 #include <stdio.h>
 #include <mem.h>
 
