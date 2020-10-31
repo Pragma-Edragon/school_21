@@ -17,10 +17,12 @@
 #include "ft_memchr.c"
 #include "ft_memmove.c"
 #include "ft_memccpy.c"
+#include "ft_memcpy.c"
 #include "ft_bzero.c"
 #include "ft_memset.c"
 #include "ft_strdup.c"
 #include "ft_substr.c"
+#include "ft_strjoin.c"
 #include <stdio.h>
 #include <mem.h>
 
