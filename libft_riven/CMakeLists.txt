@@ -4,3 +4,4 @@ project(libft C)
 set(CMAKE_C_STANDARD 99)
 
 add_executable(libft_checker functions_checker.c)
+add_executable(strcat_cheker strlcat_checker.c)
