@@ -15,7 +15,7 @@ size_t get_num(const char *str, char c)
             numb++;
         iter++;
     }
-    return numb == 0? 1 : numb;
+    return numb == 0? 1 : numb + 1;
 }
 
 char **create_string(size_t num)
@@ -55,7 +55,7 @@ char **create_words(char const *s, char c)
     while (iter < num)
     {
         jiter = 0;
-        while (*(unsigned char *)s != (unsigned char)c && *(unsigned char *)s)
+        while (*(unsigned char *)s != (unsigned char)c && *(unsigned char *)s != '\0')
         {
             jiter++;
             s++;

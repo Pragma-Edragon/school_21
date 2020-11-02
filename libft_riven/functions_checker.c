@@ -10,8 +10,8 @@
 #include "ft_strnstr.c"
 #include "ft_strrchr.c"
 #include "ft_strchr.c"
-#include "ft_strlcat.c"
-#include "ft_strlcpy.c"
+// #include "ft_strlcat.c"
+// #include "ft_strlcpy.c"
 #include "ft_strlen.c"
 #include "ft_memcmp.c"
 #include "ft_memchr.c"
@@ -24,6 +24,8 @@
 #include "ft_substr.c"
 #include "ft_strjoin.c"
 #include "ft_strtrim.c"
+#include "ft_itoa.c"
+#include "ft_split.c"
 #include <stdio.h>
 #include <mem.h>
 
@@ -141,11 +143,13 @@ int main(void) {
     printf("\n");
     const char *src = "WHAT??";
     char buf[24] = "lsmdl_";
-    printf("%zu", ft_strlcat(buf, src, sizeof(buf)));
+    // printf("%zu", ft_strlcat(buf, src, sizeof(buf)));
     printf("\n");
-    printf("%zu ft_strlcpy: ", ft_strlcpy(buf, src, sizeof(buf)));
+    // printf("%zu ft_strlcpy: ", ft_strlcpy(buf, src, sizeof(buf)));
     printf("\n");
     memcmp_checker();
     memchr_checker();
     memmove_checker();
+    printf("\n");
+    printf("%s", ft_itoa(987656783));
 }
