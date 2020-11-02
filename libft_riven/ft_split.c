@@ -2,7 +2,7 @@
 
 #include <stdlib.h>
 
-int get_num(const char *str, char c)
+size_t get_num(const char *str, char c)
 {
     size_t numb;
     size_t iter;
@@ -15,10 +15,10 @@ int get_num(const char *str, char c)
             numb++;
         iter++;
     }
-    return (numb);
+    return numb == 0? 1 : numb;
 }
 
-char **create_string(char const *s, char c, size_t num)
+char **create_string(size_t num)
 {
     char **words;
 
@@ -49,13 +49,13 @@ char **create_words(char const *s, char c)
     size_t jiter;
 
     num = get_num(s, c);
-    if (!(words = create_string(s, c, num)))
+    if (!(words = create_string(num)))
         return ((void *)0);
     iter = 0;
     while (iter < num)
     {
         jiter = 0;
-        while (*(unsigned char *)s != (unsigned char)c)
+        while (*(unsigned char *)s != (unsigned char)c && *(unsigned char *)s)
         {
             jiter++;
             s++;
@@ -66,6 +66,8 @@ char **create_words(char const *s, char c)
         s++;
         iter++;
     }
+    words[iter] = (char *)malloc(sizeof(char));
+    words[iter] = (void *)0;
     return (words);
 }
 
