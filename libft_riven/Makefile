@@ -1,6 +1,5 @@
 NAME = libft.a
 HEADERS = libft.h
-SRC_OBJS = $(SRCS:.c=.o)
 CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
@@ -13,12 +12,18 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c\
 		ft_substr.c ft_strjoin.c ft_strtrim.c ft_itoa.c ft_strmapi.c ft_split.c\
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
+SRC_OBJECTS = $(patsubst %.c,%.o,$(SRC))
+
 all: $(NAME)
 
 $(NAME): $(SRC_OBJS)
 	@ar rc $(NAME) $(SRC_OBJS)
 	@ranlib ($NAME)
 	@echo "$(NAME) generated successfully"
+
+%.o: %.c $(HEADERS)
+	@gcc $(CFLAGS) -c $< -o $@
+	@echo "$@ added"
 
 clean:
 	@/bin/rm -rf $(SRC_OBJS)
