@@ -13,7 +13,7 @@
 #include "libft.h"
 
 int ft_strncmp(const char *str, const char *cmp, size_t n){
-	int iter;
+	size_t iter;
 
 	iter = 0;
 	while (iter < n && str[iter] != '\0' && cmp[iter] != '\0'){
