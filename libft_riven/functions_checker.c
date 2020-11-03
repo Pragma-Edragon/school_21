@@ -26,6 +26,7 @@
 #include "ft_strtrim.c"
 #include "ft_itoa.c"
 #include "ft_split.c"
+#include "ft_strmapi.c"
 #include <stdio.h>
 #include <mem.h>
 
