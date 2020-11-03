@@ -10,14 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_getlen(const char *cmp){
-	int iter;
-
-	iter = 0;
-	while (cmp[iter] != '\0')
-		iter++;
-	return iter;
-}
+#include "libft.h"
 
 int cmp_blocks(const char *str, const char *cmp, int block){
 	int iter;
@@ -38,7 +31,7 @@ char *ft_strnstr(const char *arg, const char *cmp, int len){
 
 	iter = 0;
 	key = 0;
-	block = ft_getlen(cmp);
+	block = ft_strlen(cmp);
 	if (block == 1)
         return ((char *)arg);
 	while (iter < len){

@@ -1,6 +1,6 @@
 // TODO HEADER!!!
 
-#include <stdlib.h>
+#include "libft.h"
 
 char *ft_strtrim(char const *str, char const *set)
 {

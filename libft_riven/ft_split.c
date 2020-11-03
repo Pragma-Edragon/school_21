@@ -1,6 +1,6 @@
 // TODO HEADER!!!!
 
-#include <stdlib.h>
+#include "libft.h"
 
 size_t get_num(const char *str, char c)
 {
