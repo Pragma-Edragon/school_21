@@ -13,13 +13,16 @@
 #include "libft.h"
 
 int ft_strncmp(const char *str, const char *cmp, size_t n){
-	size_t iter;
+    size_t iter;
+    unsigned char *strcp;
+    unsigned char *strcmp;
 
-	iter = 0;
-	while (iter < n && str[iter] != '\0' && cmp[iter] != '\0'){
-		if ((unsigned char)str[iter] != (unsigned char)cmp[iter])
-			return ((unsigned char)str[iter] - (unsigned char)cmp[iter]);
-		iter++;
-	}
-	return ((unsigned char)str[iter] - (unsigned char)str[iter]);
+    if (n == 0)
+        return (0);
+    strcp = (unsigned char *)str;
+    strcmp = (unsigned char *)cmp;
+    iter = 0;
+    while ((strcp[iter] && strcmp[iter]) && (strcp[iter] == strcmp[iter]) && iter < (n-1))
+        iter++;
+    return (strcp[iter] - strcmp[iter]);
 }

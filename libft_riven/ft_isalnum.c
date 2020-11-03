@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(int arg){
-    return ((int)arg >= 48 && (int)arg <= 57) || ((int)arg >= 65 && (int)arg <= 90) ||
-            ((int)arg >= 97 && (int)arg <= 122) ? 1 : 0;
+#include "libft.h"
+
+int		ft_isalnum(int c)
+{
+    return (ft_isdigit(c) || ft_isalpha(c));
 }

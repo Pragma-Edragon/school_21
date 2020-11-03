@@ -5,7 +5,7 @@
 void *ft_memcpy(void *dest, const void *src, size_t num)
 {
     unsigned char *strdest;
-    const unsigned char *strsrc;
+    unsigned char *strsrc;
     size_t iter;
 
     strsrc = (unsigned char*)src;

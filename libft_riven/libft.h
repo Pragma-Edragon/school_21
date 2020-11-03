@@ -23,7 +23,7 @@ void ft_lstadd_front(t_list **head, t_list *new);
 t_list *ft_lstlast(t_list *head);
 t_list *ft_lstnew(void *content);
 int ft_lstsize(t_list *head);
-void *ft_memccpy(const void *dest, const void *src, int ch, size_t count);
+void *ft_memccpy(void *dest, const void *src, int ch, size_t count);
 void *ft_memchr(const void *arr, int c, size_t n);
 int ft_memcmp(const void *str1, const void *str2, size_t n);
 void *ft_memcpy(void *dest, const void *src, size_t num);
