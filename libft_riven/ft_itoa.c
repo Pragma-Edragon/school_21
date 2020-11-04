@@ -2,36 +2,37 @@
 
 #include "libft.h"
 
-int get_num_len(int number)
+size_t		ft_length(int n)
 {
-    long int iter;
+    size_t	i;
 
-    iter = 0;
-    while (number != 0)
-    {
-        number /= 10;
-        ++iter;
-    }
-    return (iter);
+    i = 1;
+    while (n /= 10)
+        i++;
+    return (i);
 }
 
-char *ft_itoa(int n)
+char		*ft_itoa(int n)
 {
-    char *number;
-    size_t len;
-    long int cp;
+    char	*str;
+    size_t	length;
+    long	n_copy;
 
-    len = n < 0 ? get_num_len(n) + 1: get_num_len(n);
-    if (!(number = (char *)malloc(len * sizeof(char) + 1)))
-        return ((void *)0);
-    ft_bzero(number, len + 1);
+    length = ft_length(n);
+    n_copy = (long)n;
     if (n < 0)
-        *(number + 0) = '-';
-    cp = n < 0 ? (long int)n * -1 : (long int)n;
-    len -= 1;
-    while (cp != 0){
-        number[len--] = cp % 10 + '0';
-        cp /= 10;
+    {
+        n_copy = (long)n * -1;
+        length++;
     }
-    return (number);
+    str = (char *)malloc(sizeof(char) * length + 1);
+    if (!str)
+        return (NULL);
+    ft_bzero(str, length + 1);
+    str[--length] = n_copy % 10 + '0';
+    while (n_copy /= 10)
+        str[--length] = n_copy % 10 + '0';
+    if (n < 0)
+        *(str + 0) = '-';
+    return (str);
 }

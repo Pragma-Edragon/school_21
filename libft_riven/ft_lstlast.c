@@ -4,7 +4,7 @@
 
 t_list *ft_lstlast(t_list *head)
 {
-    t_list last_node;
+    t_list *last_node;
 
     while (head)
     {
