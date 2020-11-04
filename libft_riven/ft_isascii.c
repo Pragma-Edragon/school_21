@@ -11,5 +11,7 @@
 /* ************************************************************************** */
 
 int ft_isascii(int arg){
-    return (int)arg >= 0 && (int)arg < 127 ? 1 : 0;
+    if (arg >= (unsigned char)0 && (unsigned char)127 >= arg)
+        return (1);
+    return (0);
 }
