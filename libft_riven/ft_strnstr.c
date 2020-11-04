@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-#include "libft.h"
-
 int cmp_blocks(const char *str, const char *cmp, int block){
     int iter;
 
