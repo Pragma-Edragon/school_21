@@ -31,7 +31,8 @@ char *allocate_memory_for_word(char const *s, char c)
         amount++;
         s++;
     }
-    word = (char *)malloc(sizeof(char) * amount + 1);
+    if (!(word = (char *)malloc(sizeof(char) * amount + 1)))
+        return ((void *)0);
     return (word);
 }
 
@@ -39,7 +40,6 @@ char **memory_allocation_for_string(char const *s, char c, size_t words_amount)
 {
     char **words;
     size_t amount;
-    int key;
 
     if (!(words = (char **)malloc(sizeof(char *) * words_amount + 1)))
         return ((void *)0);
@@ -87,6 +87,7 @@ char **ft_split(char const *s, char c) {
     if (!s || !*s)
         return ((void *) 0);
     amount = words_amount(s, c);
-    words = memory_allocation_for_string(s, c, amount);
+    if (!(words = memory_allocation_for_string(s, c, amount)))
+        return ((void *)0);
     return(fill_string_by_chars(s, c, words, amount));
 }
