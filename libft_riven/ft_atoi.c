@@ -11,21 +11,23 @@
 /* ************************************************************************** */
 
 int ft_atoi(const char *str){
-	int		key;
-	int		res;
+    int             key;
+    unsigned long long int res;
 
-	res = 0;
-	while (*str == 32)
-		str++;
-	key = *str == '-' ? 1 : 0;
-	if (key || *str == '+')
-		str++;
-	while (*str){
-		if (*str >= 48 && *str <= 57)
-			res = res * 10 + *str - '0';
-		else
-			return (0);
-		str++;
-	}
-	return key == 1 ? res * -1 : res;
+    res = 0;
+    while (*str == 32 || (*str >= 6 && *str <= 13))
+        str++;
+    key = *str == '-' ? 1 : 0;
+    if (key || *str == '+')
+        str++;
+    while (*str >= 48 && *str <= 57){
+        if (res < 9223372036854775807)
+            res = res * 10 + *str - '0';
+        else if (res > 9223372036854775807 && key == 1)
+            return (0);
+        else
+            return (-1);
+        str++;
+    }
+    return key == 1 ? res * -1 : res;
 }

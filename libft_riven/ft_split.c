@@ -2,81 +2,91 @@
 
 #include "libft.h"
 
-size_t get_num(const char *str, char c)
+size_t words_amount(char const *s, char c)
 {
-    size_t numb;
-    size_t iter;
-
-    numb = 0;
-    iter = 0;
-    while ((unsigned char)str[iter])
-    {
-        if ((unsigned char)str[iter] == (unsigned char)c)
-            numb++;
-        iter++;
-    }
-    return numb == 0? 1 : numb + 1;
-}
-
-char **create_string(size_t num)
-{
-    char **words;
-
-    if (!(words = (char **)malloc(num * sizeof(char *) + 1)))
-        return ((void *)0);
-    return (words);
-}
-
-char *copy_words(char const *s, char *word, size_t jiter)
-{
+    size_t amount;
     size_t iter;
 
     iter = 0;
-    while (iter < jiter)
+    amount = 0;
+    while (s[iter])
     {
-        word[iter] = *(s - jiter + iter);
+        if (s[iter] != (unsigned char)c && s[iter])
+            amount++;
+        while (s[iter] != (unsigned char)c && s[iter])
+            iter++;
         iter++;
     }
-    word[iter] = '\0';
+    return (amount);
+}
+
+char *allocate_memory_for_word(char const *s, char c)
+{
+    size_t amount;
+    char *word;
+
+    amount = 0;
+    while (*s && *s != (unsigned char)c)
+    {
+        amount++;
+        s++;
+    }
+    word = (char *)malloc(sizeof(char) * amount + 1);
     return (word);
 }
 
-char **create_words(char const *s, char c)
+char **memory_allocation_for_string(char const *s, char c, size_t words_amount)
 {
     char **words;
-    size_t num;
-    size_t iter;
-    size_t jiter;
+    size_t amount;
+    int key;
 
-    num = get_num(s, c);
-    if (!(words = create_string(num)))
+    if (!(words = (char **)malloc(sizeof(char *) * words_amount + 1)))
         return ((void *)0);
-    iter = 0;
-    while (iter < num)
+    amount = 0;
+    while (amount < words_amount)
     {
-        jiter = 0;
-        while (*(unsigned char *)s != (unsigned char)c && *(unsigned char *)s != '\0')
-        {
-            jiter++;
+        while (*s && *s == (unsigned char)c)
             s++;
-        }
-        if (!(words[iter] = (char *)malloc(jiter * sizeof(char) + 1)))
-            return ((void *)0);
-        words[iter] = copy_words(s, words[iter], jiter);
-        s++;
-        iter++;
+        words[amount] = allocate_memory_for_word(s, c);
+        while (*s && *s != (unsigned char)c)
+            s++;
+        amount++;
     }
-    words[iter] = (char *)malloc(sizeof(char));
-    words[iter] = (void *)0;
     return (words);
 }
 
+char **fill_string_by_chars(char const *s, char c, char **words, size_t amount)
+{
+    size_t iter;
+    size_t jiter;
+
+    iter = 0;
+    while (iter < amount)
+    {
+        jiter = 0;
+        while (*s && *s == c)
+            s++;
+        while (*s && *s != c)
+        {
+            words[iter][jiter] = *s;
+            jiter++;
+            s++;
+        }
+        words[iter][jiter] = '\0';
+        iter++;
+    }
+    *(words + iter) = (void *)0;
+    return (words);
+}
 
 char **ft_split(char const *s, char c) {
     char **words;
+    size_t amount;
 
     if (!s || !*s)
         return ((void *) 0);
-    words = create_words(s, c);
-    return (words);
+    amount = words_amount(s, c);
+    words = memory_allocation_for_string(s, c, amount);
+    return(fill_string_by_chars(s, c, words, amount));
 }

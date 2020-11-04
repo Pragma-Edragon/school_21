@@ -17,7 +17,7 @@ int ft_isalnum(int arg);
 int ft_isalpha(int arg);
 int ft_isascii(int arg);
 int ft_isdigit(int arg);
-int ft_isprint(int arg)
+int ft_isprint(int arg);
 char *ft_itoa(int n);
 void ft_lstadd_front(t_list **head, t_list *new);
 t_list *ft_lstlast(t_list *head);
