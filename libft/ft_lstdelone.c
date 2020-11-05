@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekandaq <ekandaq@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/05 15:49:00 by ekandaq           #+#    #+#             */
-/*   Updated: 2020/11/05 15:49:00 by ekandaq          ###   ########.fr       */
+/*   Created: 2020/11/05 17:46:39 by ekandaq           #+#    #+#             */
+/*   Updated: 2020/11/05 17:51:10 by ekandaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstlast(t_list *head)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-    t_list *last_node;
-
-    last_node = head;
-    if (head)
-    	while (last_node->next)
-    		last_node = last_node->next;
-    return (last_node);
+	(*del)(lst->content);
+	free(lst);
+	lst = (void *)0;
 }

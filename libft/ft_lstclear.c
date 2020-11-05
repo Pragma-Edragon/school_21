@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekandaq <ekandaq@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/05 15:49:00 by ekandaq           #+#    #+#             */
-/*   Updated: 2020/11/05 15:49:00 by ekandaq          ###   ########.fr       */
+/*   Created: 2020/11/05 17:53:34 by ekandaq           #+#    #+#             */
+/*   Updated: 2020/11/05 18:14:03 by ekandaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstlast(t_list *head)
+void	ft_lstclear(t_list **head, void (*del)(void*))
 {
-    t_list *last_node;
+	t_list *created;
 
-    last_node = head;
-    if (head)
-    	while (last_node->next)
-    		last_node = last_node->next;
-    return (last_node);
+	if (head)
+	{
+		while(*head)
+		{
+			created = (*head)->next;
+			(del)(*head);
+			*head = created;
+		}
+	}
 }

@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekandaq <ekandaq@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/05 15:49:00 by ekandaq           #+#    #+#             */
-/*   Updated: 2020/11/05 15:49:00 by ekandaq          ###   ########.fr       */
+/*   Created: 2020/11/05 17:21:16 by ekandaq           #+#    #+#             */
+/*   Updated: 2020/11/05 17:44:30 by ekandaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstlast(t_list *head)
+void		ft_lstadd_back(t_list **head, t_list *new)
 {
-    t_list *last_node;
+	t_list *last_node;
 
-    last_node = head;
-    if (head)
-    	while (last_node->next)
-    		last_node = last_node->next;
-    return (last_node);
+	if (head)
+	{
+		if (!*head)
+			*head = new;
+		else
+		{
+			last_node = ft_lstlast(*(head));
+			last_node->next = new;
+		}
+	}
 }

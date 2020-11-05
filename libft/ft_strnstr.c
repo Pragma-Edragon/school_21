@@ -6,7 +6,7 @@
 /*   By: ekandaq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:45:48 by ekandaq           #+#    #+#             */
-/*   Updated: 2020/10/28 16:45:49 by ekandaq          ###   ########.fr       */
+/*   Updated: 2020/11/05 16:51:27 by ekandaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ char		*ft_strnstr(const char *arg, const char *cmp, int len){
     block = ft_strlen(cmp);
     if (block == 0)
         return ((char *)arg);
-    while (iter + block < len){
+    if (!arg)
+    	return ((void *)0);
+    while (iter + block <= len){
         if (cmp_blocks(arg, cmp, block))
         {
             key = 1;

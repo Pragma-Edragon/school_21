@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekandaq <ekandaq@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/05 15:49:00 by ekandaq           #+#    #+#             */
-/*   Updated: 2020/11/05 15:49:00 by ekandaq          ###   ########.fr       */
+/*   Created: 2020/11/05 18:00:02 by ekandaq           #+#    #+#             */
+/*   Updated: 2020/11/05 18:03:16 by ekandaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstlast(t_list *head)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-    t_list *last_node;
-
-    last_node = head;
-    if (head)
-    	while (last_node->next)
-    		last_node = last_node->next;
-    return (last_node);
+	while (lst)
+	{
+		(*f)(lst->content);
+		lst = lst->next;
+	}
 }

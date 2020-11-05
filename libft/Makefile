@@ -12,12 +12,13 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c\
 		ft_substr.c ft_strjoin.c ft_strtrim.c ft_itoa.c ft_strmapi.c ft_split.c\
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-BNS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c
+BNS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
+	  ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c
 
 SRC_OBJS = $(patsubst %.c,%.o,$(SRC))
 BNS_OBJS = $(patsubst %.c, %.o, $(BNS))
 
-all: $(NAME)
+all: $(NAME) bonus
 
 $(NAME): $(SRC_OBJS)
 	@ar rc $(NAME) $(SRC_OBJS)
@@ -42,5 +43,5 @@ bonus: $(BNS_OBJS)
 ifeq ($(shell test -f $(NAME) && ar t $(NAME) | grep lst),)
 	@ar rc $(NAME) $(BNS_OBJS)
 	@ranlib $(NAME)
-	@echo "Bonus added"
+	@echo "Bonus added - $(BNS_OBJS)"
 endif

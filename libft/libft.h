@@ -48,5 +48,9 @@ char				*ft_strtrim(char const *str, char const *set);
 char				*ft_substr(char const *str, unsigned int start, size_t len);
 int					ft_tolower(int arg);
 int					ft_toupper(int arg);
+void				ft_lstadd_back(t_list **head, t_list *new);
+void				ft_lstdelone(t_list *lst, void (*del)(void*));
+void				ft_lstclear(t_list **head, void (*del)(void*));
+void				ft_lstiter(t_list *lst, void (*f)(void *));
 
 #endif

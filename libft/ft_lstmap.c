@@ -1,24 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekandaq <ekandaq@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/05 15:49:00 by ekandaq           #+#    #+#             */
-/*   Updated: 2020/11/05 15:49:00 by ekandaq          ###   ########.fr       */
+/*   Created: 2020/11/05 18:04:50 by ekandaq           #+#    #+#             */
+/*   Updated: 2020/11/05 18:05:28 by ekandaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-t_list		*ft_lstlast(t_list *head)
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-    t_list *last_node;
 
-    last_node = head;
-    if (head)
-    	while (last_node->next)
-    		last_node = last_node->next;
-    return (last_node);
 }
