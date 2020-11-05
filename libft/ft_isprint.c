@@ -6,10 +6,11 @@
 /*   By: ekandaq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 14:27:18 by ekandaq           #+#    #+#             */
-/*   Updated: 2020/10/28 14:27:20 by ekandaq          ###   ########.fr       */
+/*   Updated: 2020/11/05 18:40:19 by ekandaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isprint(int arg){
-    return (int)arg >= 32 && (int)arg < 127 ? 1 : 0;
+int		ft_isprint(int arg)
+{
+	return ((int)arg >= 32 && (int)arg < 127 ? 1 : 0);
 }

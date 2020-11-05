@@ -6,7 +6,7 @@
 /*   By: ekandaq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 14:52:58 by ekandaq           #+#    #+#             */
-/*   Updated: 2020/10/28 14:52:59 by ekandaq          ###   ########.fr       */
+/*   Updated: 2020/11/05 18:36:18 by ekandaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_isalnum(int c)
 {
-    return (ft_isdigit(c) || ft_isalpha(c));
+	return (ft_isdigit(c) || ft_isalpha(c));
 }

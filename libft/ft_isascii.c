@@ -6,12 +6,13 @@
 /*   By: ekandaq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 14:37:23 by ekandaq           #+#    #+#             */
-/*   Updated: 2020/10/28 14:45:29 by ekandaq          ###   ########.fr       */
+/*   Updated: 2020/11/05 18:38:56 by ekandaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isascii(int arg){
-    if (arg >= (unsigned char)0 && (unsigned char)127 >= arg)
-        return (1);
-    return (0);
+int		ft_isascii(int arg)
+{
+	if (arg >= (unsigned char)0 && (unsigned char)127 >= arg)
+		return (1);
+	return (0);
 }

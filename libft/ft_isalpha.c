@@ -6,10 +6,12 @@
 /*   By: ekandaq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 15:11:08 by ekandaq           #+#    #+#             */
-/*   Updated: 2020/10/28 15:11:09 by ekandaq          ###   ########.fr       */
+/*   Updated: 2020/11/05 18:38:27 by ekandaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalpha(int arg){
-    return ((int)arg >= 65 && (int)arg <= 90) || ((int)arg >= 97 && (int)arg <= 122) ? 1 : 0;
+int		ft_isalpha(int arg)
+{
+	return (((int)arg >= 65 && (int)arg <= 90) ||
+			((int)arg >= 97 && (int)arg <= 122) ? 1 : 0);
 }
