@@ -12,8 +12,8 @@
 
 #include "libft.h"
 
-int cmp_blocks(const char *str, const char *cmp, int block){
-    int iter;
+int			cmp_blocks(const char *str, const char *cmp, int block){
+    int		iter;
 
     iter = 0;
     while (str[iter] != '\0' && cmp[iter] != '\0'){
@@ -24,17 +24,17 @@ int cmp_blocks(const char *str, const char *cmp, int block){
     return iter == block ? 1 : 0;
 }
 
-char *ft_strnstr(const char *arg, const char *cmp, int len){
-    int iter;
-    int block;
-    int key;
+char		*ft_strnstr(const char *arg, const char *cmp, int len){
+    int		iter;
+    int		block;
+    int		key;
 
     iter = 0;
     key = 0;
     block = ft_strlen(cmp);
     if (block == 0)
         return ((char *)arg);
-    while (iter < len){
+    while (iter + block < len){
         if (cmp_blocks(arg, cmp, block))
         {
             key = 1;

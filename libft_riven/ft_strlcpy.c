@@ -1,12 +1,22 @@
-// TODO HEADER!!!
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ekandaq <ekandaq@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/05 15:50:57 by ekandaq           #+#    #+#             */
+/*   Updated: 2020/11/05 15:50:57 by ekandaq          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+size_t				ft_strlcpy(char *dst, const char *src, size_t size)
 {
-    size_t i;
-    unsigned char *strsrc;
-    unsigned char *strdst;
+    size_t			i;
+    unsigned char	*strsrc;
+    unsigned char	*strdst;
 
     strsrc = (unsigned char *)src;
     strdst = (unsigned char *)dst;

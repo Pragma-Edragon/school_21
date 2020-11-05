@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-int ft_strncmp(const char *str, const char *cmp, size_t n){
-    size_t iter;
-    unsigned char *strcp;
-    unsigned char *strcmp;
+int					ft_strncmp(const char *str, const char *cmp, size_t n){
+    size_t			iter;
+    unsigned char	*strcp;
+    unsigned char	*strcmp;
 
     if (n == 0)
         return (0);

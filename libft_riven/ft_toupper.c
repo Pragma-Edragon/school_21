@@ -10,6 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int arg){
+int		ft_toupper(int arg){
     return (int)arg >= 97 && (int)arg <= 122 ? (char)arg - 32 : (char)arg;
 }

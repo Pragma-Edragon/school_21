@@ -1,6 +1,16 @@
-// TODO HEADER!!!
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ekandaq <ekandaq@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/05 15:46:08 by ekandaq           #+#    #+#             */
+/*   Updated: 2020/11/05 15:46:08 by ekandaq          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_nullb_str_len(const char *str){
+int		ft_nullb_str_len(const char *str){
     int iter;
 
     iter = 0;
@@ -9,7 +19,7 @@ int ft_nullb_str_len(const char *str){
     return (iter + 1);
 }
 
-char *ft_strchr(const char *str, int symb){
+char	*ft_strchr(const char *str, int symb){
     int len;
     int iter;
 

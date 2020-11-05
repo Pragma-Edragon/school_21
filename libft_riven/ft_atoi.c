@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_atoi(const char *str){
-    int             key;
-    unsigned long long int res;
+int		ft_atoi(const char *str){
+    int						key;
+    unsigned long long int	res;
 
     res = 0;
     while (*str == 32 || (*str >= 6 && *str <= 13))

@@ -1,11 +1,21 @@
-// TODO HEADER!!!
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ekandaq <ekandaq@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/05 15:54:29 by ekandaq           #+#    #+#             */
+/*   Updated: 2020/11/05 15:54:29 by ekandaq          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strtrim(char const *str, char const *set)
+char		*ft_strtrim(char const *str, char const *set)
 {
-    size_t end;
-    char *sub;
+    size_t	end;
+    char	*sub;
 
     if (!(str))
         return ((void *)0);

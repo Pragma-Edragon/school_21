@@ -1,8 +1,18 @@
-// TODO HEADER!!!
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ekandaq <ekandaq@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/05 15:47:19 by ekandaq           #+#    #+#             */
+/*   Updated: 2020/11/05 15:47:19 by ekandaq          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_calloc(size_t items, size_t size)
+void	*ft_calloc(size_t items, size_t size)
 {
     void *pointer;
 

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int arg){
+int		ft_isascii(int arg){
     if (arg >= (unsigned char)0 && (unsigned char)127 >= arg)
         return (1);
     return (0);

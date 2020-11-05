@@ -2,10 +2,10 @@
 
 #include "libft.h"
 
-char *ft_substr(char const *str, unsigned int start, size_t len)
+char		*ft_substr(char const *str, unsigned int start, size_t len)
 {
-    char *substring;
-    size_t iter;
+    char	*substring;
+    size_t	iter;
 
     if (!str)
         return ((void *)0);

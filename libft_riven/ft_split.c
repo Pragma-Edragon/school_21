@@ -1,11 +1,21 @@
-// TODO HEADER!!!!
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ekandaq <ekandaq@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/05 15:50:03 by ekandaq           #+#    #+#             */
+/*   Updated: 2020/11/05 15:50:03 by ekandaq          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-size_t words_amount(char const *s, char c)
+size_t		words_amount(char const *s, char c)
 {
-    size_t amount;
-    size_t iter;
+    size_t	amount;
+    size_t	iter;
 
     iter = 0;
     amount = 0;
@@ -20,10 +30,10 @@ size_t words_amount(char const *s, char c)
     return (amount);
 }
 
-char *allocate_memory_for_word(char const *s, char c)
+char		*allocate_memory_for_word(char const *s, char c)
 {
-    size_t amount;
-    char *word;
+    size_t	amount;
+    char	*word;
 
     amount = 0;
     while (*s && *s != (unsigned char)c)
@@ -36,10 +46,10 @@ char *allocate_memory_for_word(char const *s, char c)
     return (word);
 }
 
-char **memory_allocation_for_string(char const *s, char c, size_t words_amount)
+char		**memory_allocation_for_string(char const *s, char c, size_t words_amount)
 {
-    char **words;
-    size_t amount;
+    char	**words;
+    size_t	amount;
 
     if (!(words = (char **)malloc(sizeof(char *) * words_amount + 1)))
         return ((void *)0);
@@ -56,10 +66,10 @@ char **memory_allocation_for_string(char const *s, char c, size_t words_amount)
     return (words);
 }
 
-char **fill_string_by_chars(char const *s, char c, char **words, size_t amount)
+char		**fill_string_by_chars(char const *s, char c, char **words, size_t amount)
 {
-    size_t iter;
-    size_t jiter;
+    size_t	iter;
+    size_t	jiter;
 
     iter = 0;
     while (iter < amount)
@@ -80,9 +90,9 @@ char **fill_string_by_chars(char const *s, char c, char **words, size_t amount)
     return (words);
 }
 
-char **ft_split(char const *s, char c) {
-    char **words;
-    size_t amount;
+char		**ft_split(char const *s, char c) {
+    char	**words;
+    size_t	amount;
 
     if (!s || !*s)
         return ((void *) 0);

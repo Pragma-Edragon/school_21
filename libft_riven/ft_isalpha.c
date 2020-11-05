@@ -10,6 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int arg){
+int		ft_isalpha(int arg){
     return ((int)arg >= 65 && (int)arg <= 90) || ((int)arg >= 97 && (int)arg <= 122) ? 1 : 0;
 }

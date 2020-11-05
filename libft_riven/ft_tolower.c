@@ -10,6 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int arg) {
+int		ft_tolower(int arg) {
     return (char)arg >= 65 && (char)arg <= 90 ? (char)arg + 32 : (char)arg;
 }
