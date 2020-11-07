@@ -28,4 +28,3 @@ void			ft_putnbr_fd(int n, int fd)
 	letter = cp % 10 + '0';
 	write(fd, &letter, sizeof(letter));
 }
-

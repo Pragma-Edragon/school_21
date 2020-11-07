@@ -6,15 +6,15 @@
 /*   By: ekandaq <ekandaq@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 15:49:10 by ekandaq           #+#    #+#             */
-/*   Updated: 2020/11/05 15:49:10 by ekandaq          ###   ########.fr       */
+/*   Updated: 2020/11/07 16:55:52 by ekandaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize(t_list *head)
+int					ft_lstsize(t_list *head)
 {
-    unsigned int iter;
+    unsigned int	iter;
 
     if (!head)
         return (0);

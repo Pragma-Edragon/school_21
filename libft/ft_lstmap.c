@@ -6,17 +6,17 @@
 /*   By: ekandaq <ekandaq@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 18:04:50 by ekandaq           #+#    #+#             */
-/*   Updated: 2020/11/07 16:43:31 by ekandaq          ###   ########.fr       */
+/*   Updated: 2020/11/07 16:55:52 by ekandaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *cp;
-	t_list *new;
-	t_list *head;
+	t_list	*cp;
+	t_list	*new;
+	t_list	*head;
 
 	cp = lst;
 	if (lst)

@@ -18,7 +18,7 @@ void	ft_lstclear(t_list **head, void (*del)(void*))
 
 	if (head)
 	{
-		while(*head)
+		while (*head)
 		{
 			created = (*head)->next;
 			(del)(*head);
