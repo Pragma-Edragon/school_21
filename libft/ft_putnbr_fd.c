@@ -17,9 +17,8 @@ void			ft_putnbr_fd(int n, int fd)
 	char		letter;
 	long long	cp;
 
-
 	if (fd < 0)
-		return ;	
+		return ;
 	cp = (long long)n;
 	if (cp < 0)
 	{
