@@ -18,7 +18,7 @@ BNS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
 SRC_OBJS = $(patsubst %.c,%.o,$(SRC))
 BNS_OBJS = $(patsubst %.c, %.o, $(BNS))
 
-all: $(NAME) bonus
+all: $(NAME)
 
 $(NAME): $(SRC_OBJS)
 	@ar rc $(NAME) $(SRC_OBJS)

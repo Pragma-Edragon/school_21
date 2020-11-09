@@ -19,6 +19,6 @@ t_list		*ft_lstlast(t_list *head)
 	last_node = head;
 	if (head)
 		while (last_node->next)
-			ast_node = last_node->next;
+			last_node = last_node->next;
 	return (last_node);
 }
