@@ -23,8 +23,8 @@ void			ft_putnbr_fd(int n, int fd)
 		cp *= -1;
 		write(1, "-", 1);
 	}
-	if (cp/10)
-		ft_putnbr_fd(cp/10, fd);
+	if (cp / 10)
+		ft_putnbr_fd(cp / 10, fd);
 	letter = cp % 10 + '0';
 	write(fd, &letter, sizeof(letter));
 }

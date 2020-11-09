@@ -12,7 +12,8 @@
 
 #include "libft.h"
 
-void				*ft_memccpy(void *dest, const void *src, int ch, size_t count)
+void				*ft_memccpy(void *dest, const void *src,
+					int ch, size_t count)
 {
 	unsigned char	*strdest;
 	unsigned char	*strsrc;
@@ -21,7 +22,8 @@ void				*ft_memccpy(void *dest, const void *src, int ch, size_t count)
 	strsrc = (unsigned char *)src;
 	strdest = (unsigned char *)dest;
 	iter = 0;
-	while (iter < count){
+	while (iter < count)
+	{
 		strdest[iter] = strsrc[iter];
 		if (strdest[iter] == (unsigned char)ch)
 			return ((void*)(dest + iter + 1));

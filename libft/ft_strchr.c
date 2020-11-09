@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_nullb_str_len(const char *str){
+int		ft_nullb_str_len(const char *str)
+{
 	int	iter;
 
 	iter = 0;
@@ -19,13 +20,15 @@ int		ft_nullb_str_len(const char *str){
 	return (iter + 1);
 }
 
-char	*ft_strchr(const char *str, int symb){
+char	*ft_strchr(const char *str, int symb)
+{
 	int	len;
 	int	iter;
 
 	iter = 0;
 	len = ft_nullb_str_len(str);
-	while (iter != len){
+	while (iter != len)
+	{
 		if ((unsigned char)str[iter] == (unsigned char)symb)
 			return ((char *)str + iter);
 		iter++;

@@ -12,17 +12,19 @@
 
 #include "libft.h"
 
-int					ft_strncmp(const char *str, const char *cmp, size_t n){
-    size_t			iter;
-    unsigned char	*strcp;
-    unsigned char	*strcmp;
+int					ft_strncmp(const char *str, const char *cmp, size_t n)
+{
+	size_t			iter;
+	unsigned char	*strcp;
+	unsigned char	*strcmp;
 
-    if (n == 0)
-        return (0);
-    strcp = (unsigned char *)str;
-    strcmp = (unsigned char *)cmp;
-    iter = 0;
-    while ((strcp[iter] && strcmp[iter]) && (strcp[iter] == strcmp[iter]) && iter < (n-1))
-        iter++;
-    return (strcp[iter] - strcmp[iter]);
+	if (n == 0)
+		return (0);
+	strcp = (unsigned char *)str;
+	strcmp = (unsigned char *)cmp;
+	iter = 0;
+	while ((strcp[iter] && strcmp[iter]) &&
+	(strcp[iter] == strcmp[iter]) && iter < (n - 1))
+		iter++;
+	return (strcp[iter] - strcmp[iter]);
 }

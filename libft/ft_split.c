@@ -46,8 +46,8 @@ char		*allocate_memory_for_word(char const *s, char c)
 	return (word);
 }
 
-char		**memory_allocation_for_string(char const *s, char c,
-									 size_t words_amount)
+char		**memory_allocation_for_string(char const *s,
+									char c, size_t words_amount)
 {
 	char	**words;
 	size_t	amount;
@@ -68,7 +68,7 @@ char		**memory_allocation_for_string(char const *s, char c,
 }
 
 char		**fill_string_by_chars(char const *s, char c,
-							 char **words, size_t amount)
+							char **words, size_t amount)
 {
 	size_t	iter;
 	size_t	jiter;
@@ -92,12 +92,13 @@ char		**fill_string_by_chars(char const *s, char c,
 	return (words);
 }
 
-char		**ft_split(char const *s, char c) {
+char		**ft_split(char const *s, char c)
+{
 	char	**words;
 	size_t	amount;
 
 	if (!s || !*s)
-		return ((void *) 0);
+		return ((void *)0);
 	amount = words_amount(s, c);
 	if (!(words = memory_allocation_for_string(s, c, amount)))
 		return ((void *)0);
