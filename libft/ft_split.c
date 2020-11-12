@@ -60,7 +60,7 @@ char			**ft_split(char const *s, char c)
 	if (!s || !*s)
 		return ((void *)0);
 	amount = words_amount(s, c);
-	if (!(words = (char **)malloc(sizeof(char *) * words_amount(s, c) + 1)))
+	if (!(words = (char **)malloc(sizeof(char *) * (words_amount(s, c) + 1))))
 		return ((void *)0);
 	iter = -1;
 	start = 0;
