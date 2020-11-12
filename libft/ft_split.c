@@ -62,9 +62,9 @@ char			**ft_split(char const *s, char c)
 	amount = words_amount(s, c);
 	if (!(words = (char **)malloc(sizeof(char *) * words_amount(s, c) + 1)))
 		return ((void *)0);
-	iter = 0;
+	iter = -1;
 	start = 0;
-	while (iter < amount)
+	while (iter < amount - 1)
 	{
 		while (s[start] == c)
 			start++;
