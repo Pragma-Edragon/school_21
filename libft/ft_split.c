@@ -5,76 +5,85 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekandaq <ekandaq@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/05 15:50:03 by ekandaq           #+#    #+#             */
-/*   Updated: 2020/11/07 17:17:03 by ekandaq          ###   ########.fr       */
+/*   Created: 2020/11/16 17:02:09 by ekandaq           #+#    #+#             */
+/*   Updated: 2020/11/16 17:02:09 by ekandaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t			words_amount(char const *s, char c)
+static int	countc(char const *s, char c)
 {
-	size_t		amount;
-	size_t		iter;
-
-	iter = 0;
-	amount = 0;
-	while (s[iter])
-	{
-		if (s[iter] != (unsigned char)c && s[iter])
-			amount++;
-		while (s[iter] != (unsigned char)c && s[iter])
-			iter++;
-		iter++;
-	}
-	return (amount);
-}
-
-size_t			word_len(char const *s, char letter, size_t start)
-{
-	size_t	len;
+	int len;
+	int i;
 
 	len = 0;
-	while (s[start] != '\0' && s[start] != letter)
+	i = 0;
+	while (s[i])
 	{
-		len++;
-		start++;
+		while (s[i] == c && s[i])
+			i++;
+		if (s[i])
+			len++;
+		while (s[i] != c && s[i])
+			i++;
 	}
 	return (len);
 }
 
-void			memory_clean_for_words(char **words, size_t amount)
+static void	*ft_clean(char **arr, int count)
 {
-	while (--amount)
-		free(words[amount]);
-	free(words);
+	int	i;
+
+	i = 0;
+	while (i < count)
+		free(arr[i++]);
+	free(arr);
+	return (NULL);
 }
 
-char			**ft_split(char const *s, char c)
+static int	countw(char const *s, char c)
 {
-	char		**words;
-	size_t		amount;
-	size_t		iter;
-	size_t		start;
+	int		i;
+	int		len;
 
-	if (!s || !*s)
-		return ((void *)0);
-	amount = words_amount(s, c);
-	if (!(words = (char **)malloc(sizeof(char *) * (words_amount(s, c) + 1))))
-		return ((void *)0);
-	iter = -1;
-	start = 0;
-	while (iter < amount - 1)
+	i = 0;
+	len = 0;
+	while (s[i] == c && s[i])
+		i++;
+	while (s[i] != c && s[i])
 	{
-		while (s[start] == c)
-			start++;
-		if (!(words[iter++] = ft_substr(s, start, word_len(s, c, start))))
-		{
-			memory_clean_for_words(words, amount);
-			return ((void *)0);
-		}
-		start += word_len(s, c, start);
+		i++;
+		len++;
 	}
-	*(words + iter) = (void *)0;
-	return (words);
+	return (len);
+}
+
+char		**ft_split(char const *s, char c)
+{
+	int		b;
+	int		i;
+	int		j;
+	char	**buf;
+
+	i = 0;
+	b = -1;
+	if (!s || !(buf = (char**)malloc(sizeof(char*) * (countc(s, c) + 1))))
+		return (NULL);
+	while (++b < countc(s, c))
+	{
+		j = 0;
+		if (!(buf[b] = (char*)malloc(sizeof(char) * (countw(&s[i], c) + 1))))
+		{
+			ft_clean(buf, b);
+			return (NULL);
+		}
+		while (s[i] == c && s[i])
+			i++;
+		while (s[i] != c && s[i])
+			buf[b][j++] = s[i++];
+		buf[b][j] = '\0';
+	}
+	buf[b] = NULL;
+	return (buf);
 }

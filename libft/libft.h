@@ -6,7 +6,7 @@
 /*   By: ekandaq <ekandaq@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 15:54:31 by ekandaq           #+#    #+#             */
-/*   Updated: 2020/11/05 15:54:31 by ekandaq          ###   ########.fr       */
+/*   Updated: 2020/11/16 17:13:03 by ekandaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char				*ft_strjoin(char const *s1, char const *s2);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 size_t				ft_strlen(const char *s);
-char				*ft_strmapi(char const *str, char (*f)(unsigned int, char));
+char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_strncmp(const char *str, const char *cmp, size_t n);
 char				*ft_strnstr(const char *arg, const char *cmp, int len);
 char				*ft_strrchr(const char *str, int ch);
